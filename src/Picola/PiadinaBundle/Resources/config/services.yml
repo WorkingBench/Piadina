@@ -1,0 +1,4 @@
+services:
+#    picola_piadina.example:
+#        class: Picola\PiadinaBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
