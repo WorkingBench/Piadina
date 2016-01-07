@@ -1,0 +1,3 @@
+picola_piadina_homepage:
+    path:     /
+    defaults: { _controller: PicolaPiadinaBundle:Default:index }
