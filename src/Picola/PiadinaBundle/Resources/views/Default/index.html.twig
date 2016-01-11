@@ -11,18 +11,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="{{ asset('/bundles/picolapiadina/img/cervialogo.png') }}"/>
 
     <!-- css -->
+    <link rel="stylesheet" href="{{ asset('/bundles/picolapiadina/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/picolapiadina/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/bundles/picolapiadina/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/bundles/picolapiadina/css/bootstrap-theme.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/bundles/picolapiadina/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/bundles/picolapiadina/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/picolapiadina/css/responsive.css') }}">
+
 
     <!-- google font -->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Kreon:300,400,700'>
 
     <!-- js -->
     <script src="{{ asset('/bundles/picolapiadina/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="120" >
 <!--[if lt IE 7]>
@@ -42,18 +48,14 @@
         </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
             <div class="hidden-xs" id="logo"><a href="#header">
-                    <img src="{{ asset('/bundles/picolapiadina/img/logo.png') }}" alt="">
+                    <img src="{{ asset('/bundles/picolapiadina/img/cervialogo.png') }}" alt="">
                 </a></div>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#story">Story</a></li>
-                <li><a href="#reservation">Reservation</a></li>
-                <li><a href="#chefs">Our Chefs</a></li>
-
-
-                <li><a href="#facts">Facts</a></li>
-                <li><a href="#food-menu">Food Menu</a></li>
-                <li><a href="#special-offser">Special Offers</a></li>
+                <li><a href="#story">Povestea</a></li>
+                <li><a href="#special-offser">Oferte</a></li>
+                <li><a href="#food-menu">Meniu</a></li>
+                <li><a href="#reservation">Catering</a></li>
 
                 <!--fix for scroll spy active menu element-->
                 <li style="display:none;"><a href="#header"></a></li>
@@ -110,193 +112,6 @@
     <!-- /.container -->
     <section class="ss-style-bottom"></section>
 </div><!-- #story -->
-
-
-<div id="facts" class="parallax parallax2 facts">
-    <div class="container inner">
-        <div class="row text-center services-3">
-            <div class="col-sm-3">
-                <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-beer"></i> </div>
-                    <h4>796518</h4>
-                    <p>Mug of Beer Sold</p>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-play-circle-o"></i> </div>
-                    <h4>39472</h4>
-                    <p>Movies Watched</p>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-truck"></i> </div>
-                    <h4>2188764</h4>
-                    <p>Pizza Deleverd</p>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-users"></i> </div>
-                    <h4>480523</h4>
-                    <p>Customers Worldwide</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div><!-- #facts -->
-
-
-
-
-<div id="food-menu" class="light-wrapper">
-    <section class="ss-style-top"></section>
-    <div class="container inner">
-        <h2 class="section-title text-center">Food Menu</h2>
-        <p class="lead main text-center">There is no sincerer love than the love of food!</p>
-
-        <div class="row">
-            <div class="col-sm-3 col-md-3">
-                <div class="menu-images "><img src="{{ asset('/bundles/picolapiadina/img/menu/hot-drinks.png') }}" alt="Hot Drinks"></div>
-                <div class="menu-titles"><h1 class="">Hot drinks</h1></div>
-                <div class="menu-items ">
-                    <ul>
-                        <li>Espresso</li>
-                        <li>Americano</li>
-                        <li>Capuccino</li>
-                        <li>Latte</li>
-                        <li>Mocha</li>
-                        <li>Hot Chocolate</li>
-                        <li>Yummie Cafee</li>
-                        <li>Fruit Tea</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3">
-                <div class="menu-images "><img src="{{ asset('/bundles/picolapiadina/img/menu/ice-drinks.png') }}" alt="Ice Drinks"></div>
-                <div class="menu-titles"><h1 class="">Ice drinks</h1></div>
-                <div class="menu-items ">
-                    <ul>
-                        <li>Ice Coffee</li>
-                        <li>Americano</li>
-                        <li>Latte</li>
-                        <li>Vanilla Frappe</li>
-                        <li>Espresso Frappe</li>
-                        <li>Choco Frappe</li>
-                        <li>Iced Chai</li>
-                        <li>Fruit Fresh</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3">
-                <div class="menu-images "><img src="{{ asset('/bundles/picolapiadina/img/menu/smoothies.png') }}" alt="Smoothies"></div>
-                <div class="menu-titles"><h1 class="">Smoothies</h1></div>
-                <div class="menu-items ">
-                    <ul>
-                        <li>Mango</li>
-                        <li>Strawberry</li>
-                        <li>Blue Berry</li>
-                        <li>Peach</li>
-                        <li>Pineapple</li>
-                        <li>Banana</li>
-                        <li>Milkshake</li>
-                        <li>Greens</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3">
-                <div class="menu-images "><img src="{{ asset('/bundles/picolapiadina/img/menu/deserts.png') }}" alt="Deserts"></div>
-                <div class="menu-titles"><h1 class="">Deserts</h1></div>
-                <div class="menu-items ">
-                    <ul>
-                        <li>Cheesecake</li>
-                        <li>Choco Pie</li>
-                        <li>Pancakes</li>
-                        <li>Muffins</li>
-                        <li>Fruit Slices</li>
-                        <li>Fruit Salad</li>
-                        <li>Cream Cake</li>
-                        <li>Ice Cream</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-3 col-md-3">
-                <div class="menu-images "><img src="{{ asset('/bundles/picolapiadina/img/menu/cocktails.png') }}" alt="Hot Drinks"></div>
-                <div class="menu-titles"><h1 class="">Cocktails</h1></div>
-                <div class="menu-items ">
-                    <ul>
-                        <li>Black Velvet</li>
-                        <li>Gin Sour</li>
-                        <li>Mojito</li>
-                        <li>Long Island</li>
-                        <li>Orgasm</li>
-                        <li>Bloody Mary</li>
-                        <li>Earthquake</li>
-                        <li>Whisky Mac</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3">
-                <div class="menu-images "><img src="{{ asset('/bundles/picolapiadina/img/menu/beer.png') }}" alt="Ice Drinks"></div>
-                <div class="menu-titles"><h1 class="">Beer</h1></div>
-                <div class="menu-items ">
-                    <ul>
-                        <li>Lager</li>
-                        <li>Blonde Beer</li>
-                        <li>Black Beer</li>
-                        <li>Blonde Ale</li>
-                        <li>Pilsner</li>
-                        <li>Lemon Beer</li>
-                        <li>Unfiltered Beer</li>
-                        <li>Non-Alcoholic</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3">
-                <div class="menu-images "><img src="{{ asset('/bundles/picolapiadina/img/menu/wine.png') }}" alt="Smoothies"></div>
-                <div class="menu-titles"><h1 class="">Wine</h1></div>
-                <div class="menu-items ">
-                    <ul>
-                        <li>Sweet Red</li>
-                        <li>Dry Red</li>
-                        <li>Sweet White</li>
-                        <li>Dry White</li>
-                        <li>Rose</li>
-                        <li>Sparkling Wine</li>
-                        <li>Fortified Wine</li>
-                        <li>Frutty Red</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3">
-                <div class="menu-images "><img src="{{ asset('/bundles/picolapiadina/img/menu/sprites.png') }}" alt="Deserts"></div>
-                <div class="menu-titles"><h1 class="">Sprites</h1></div>
-                <div class="menu-items ">
-                    <ul>
-                        <li>Whisky</li>
-                        <li>Rum</li>
-                        <li>Tequila</li>
-                        <li>Gin</li>
-                        <li>Champagne</li>
-                        <li>Brandy</li>
-                        <li>Absinthe</li>
-                        <li>Liqueur</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container -->
-    <section class="ss-style-bottom"></section>
-</div><!--/#food-menu-->
-
-
 
 
 <div id="special-offser" class="parallax pricing">
@@ -389,12 +204,82 @@
             </div>
         </div>
 
+
+        <section id="food-menu">
+            <h2 class="section-title text-center">Food Menu</h2>
+            <p class="lead main text-center">There is no sincerer love than the love of food!</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <div class="food-type">
+                            <a class="btn btn-danger navbar-btn" href="#">Piadina</a>
+                            <a class="btn btn-danger navbar-btn" href="#">Sandwich</a>
+                            <a class="btn btn-danger navbar-btn" href="#">Clatite</a>
+                            <a class="btn btn-danger navbar-btn" href="#">Bauturi</a>
+                            <a class="btn btn-danger navbar-btn" href="#">Sosuri</a>
+                        </div>
+                        <ul>
+                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
+                                <div class="food-menu-img">
+                                    <img src="{{ asset('/bundles/picolapiadina/images/blog/blog-img-1.jpg') }}" alt="food-menu-img">
+                                </div>
+                                <div class="content-right">
+                                    <h3>Homestyle Chicken Pot Pie</h3>
+                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="400ms">
+                                <div class="food-menu-img">
+                                    <img src="{{ asset('/bundles/picolapiadina/images/blog/blog-img-2.jpg') }}" alt="food-menu-img">
+                                </div>
+                                <div class="content-right">
+                                    <h3>Homestyle Chicken Pot Pie</h3>
+                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="500ms">
+                                <div class="content-left">
+                                    <h3>Homestyle Chicken Pot Pie</h3>
+                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                </div>
+                                <div class="food-menu-img-2">
+                                    <img src="{{ asset('/bundles/picolapiadina/images/blog/blog-img-3.jpg') }}" alt="food-menu-img">
+                                </div>
+                            </li>
+                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="600ms">
+                                <div class="content-left">
+                                    <h3>Homestyle Chicken Pot Pie</h3>
+                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                </div>
+                                <div class="food-menu-img-2">
+                                    <img src="{{ asset('/bundles/picolapiadina/images/blog/blog-img-4.jpg') }}" alt="food-menu-img">
+                                </div>
+                            </li>
+                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="700ms">
+                                <div class="food-menu-img">
+                                    <img src="{{ asset('/bundles/picolapiadina/images/blog/blog-img-5.jpg') }}" alt="food-menu-img">
+                                </div>
+                                <div class="content-right">
+                                    <h3>Homestyle Chicken Pot Pie</h3>
+                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="800ms">
+                                <div class="food-menu-img">
+                                    <img src="{{ asset('/bundles/picolapiadina/images/blog/blog-img-6.jpg') }}" alt="food-menu-img">
+                                </div>
+                                <div class="content-right">
+                                    <h3>Homestyle Chicken Pot Pie</h3>
+                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- .col-md-12 close -->
+            </div><!-- .row close -->
+        </section><!-- #food-menu close -->
     </div>
-    <!-- /.container -->
-</div><!-- /#special-offser -->
-
-
-
+</div>
 
 <div id="reservation" class="light-wrapper">
     <section class="ss-style-top"></section>
@@ -474,7 +359,9 @@
                 <p>Mon to Sat: 6:00 PM -  1:00 AM<br>Sun: 5:30 PM - 12:00 AM</p>
 
                 <h3><i class="fa fa-map-marker fa-fw"></i>Directions</h3>
-                <p>4120 Lenox Avenue, New York, NY, 10035 76 Saint Nicholas Avenue</p>
+                <div id="map">
+
+                </div>
 
                 <h3><i class="fa fa-mobile fa-fw"></i>Contacts</h3>
                 <p>Email: <a href="mailto:yourname@meatking.com">yourname@meatking.com</a></p>
@@ -488,51 +375,7 @@
     <section class="ss-style-bottom"></section>
 </div><!-- #reservation -->
 
-
-
-<div id="chefs" class="parallax pricing">
-    <div class="container inner">
-
-        <h2 class="section-title text-center">Our Chefs</h2>
-        <p class="lead main text-center">There is no sincerer love than the love of food!</p>
-
-        <div class="row text-center chefs">
-            <div class="col-sm-4">
-                <div class="col-wrapper">
-                    <div class="icon-wrapper">
-                        <img src="{{ asset('/bundles/picolapiadina/img/chefs/1.jpg') }}">
-                    </div>
-                    <h3>Saransh Goila</h3>
-                    <p>Vivamus sagittis lacuson augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum ultricies vehicula.</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="col-wrapper">
-                    <div class="icon-wrapper">
-                        <img src="{{ asset('/bundles/picolapiadina/img/chefs/3.jpg') }}">
-                    </div>
-                    <h3>Jane Doe</h3>
-                    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient monte nascetur ultricies vehicula. </p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="col-wrapper">
-                    <div class="icon-wrapper">
-                        <img src="{{ asset('/bundles/picolapiadina/img/chefs/2.jpg') }}">
-                    </div>
-                    <h3>Anton Mosimann</h3>
-                    <p>Curabitur blandit matti tempus porttitor. Donec id elit non mi porta ut gravida at eget metus. Consectetur adipiscing elit ultricies vehicula.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container -->
-</div><!-- /#chefs -->
-
-
 <footer id="footer" class="dark-wrapper">
-    <section class="ss-style-top"></section>
     <div class="container inner">
         <div class="row">
             <div class="col-sm-6">
@@ -553,9 +396,12 @@
     <!-- /.container -->
 </footer>
 
+<script src="{{ asset('/bundles/picolapiadina/js/vendor/modernizr-2.6.2.min.js') }}"></script>
+<script src="{{ asset('/bundles/picolapiadina/js/wow.min.js') }}"></script>
 <script src="{{ asset('/bundles/picolapiadina/js/jquery-2.1.3.min.js') }}"></script>
 <script src="{{ asset('/bundles/picolapiadina/js/jquery.actual.min.js') }}"></script>
 <script src="{{ asset('/bundles/picolapiadina/js/jquery.scrollTo.min.js') }}"></script>
+<script src="{{ asset('/bundles/picolapiadina/js/plugins.js') }}"></script>
 <script src="{{ asset('/bundles/picolapiadina/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/bundles/picolapiadina/js/main.js') }}"></script>
 </body>
