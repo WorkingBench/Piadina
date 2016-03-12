@@ -96,15 +96,22 @@ $(document).ready(function() {
 
 //    Initialize Google Maps
 
-    function initialize() {
-        var mapCanvas = document.getElementById('map');
-        var mapOptions = {
-            center: new google.maps.LatLng(46.767514, 23.587197),
-            zoom: 18,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
+
+    google.maps.event.addDomListener(window, 'load', initMap);
+
+	function initMap() {
+		var myLatLng = {lat: 46.767514, lng: 23.587197};
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 17,
+			center: myLatLng
+		});
+
+		var marker = new google.maps.Marker({
+			position: myLatLng,
+			map: map,
+			title: 'Picola Cervia'
+		});
+	}
 
 });
